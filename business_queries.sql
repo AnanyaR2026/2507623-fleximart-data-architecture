@@ -1,17 +1,12 @@
 
--- =====================================================
+-- ==========================================
 -- Task 1.3: Business Query Implementation
 -- Database: FlexiMart
--- =====================================================
+-- ===========================================
 
--- -----------------------------------------------------
+-- -------------------------------------
 -- Query 1: Customer Purchase History
--- Business Question:
--- Generate a detailed report showing each customer's name,
--- email, total number of orders placed, and total amount spent.
--- Include only customers who have placed at least 2 orders
--- and spent more than ₹5,000.
--- -----------------------------------------------------
+-- -------------------------------------
 
 SELECT
     CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
@@ -29,14 +24,9 @@ HAVING COUNT(DISTINCT o.order_id) >= 2
 ORDER BY total_spent DESC;
 
 
--- -----------------------------------------------------
+-- ------------------------------------
 -- Query 2: Product Sales Analysis
--- Business Question:
--- For each product category, show category name,
--- number of different products sold,
--- total quantity sold, and total revenue generated.
--- Include only categories with revenue > ₹10,000.
--- -----------------------------------------------------
+-- --------------------------------------
 
 SELECT
     p.category,
@@ -51,11 +41,9 @@ HAVING SUM(oi.subtotal) > 10000
 ORDER BY total_revenue DESC;
 
 
--- -----------------------------------------------------
+-- --------------------------------------
 -- Query 3: Monthly Sales Trend (2024)
--- Business Question:
--- Show monthly sales trends for 2024 with cumulative revenue.
--- -----------------------------------------------------
+-- --------------------------------------
 
 SELECT
     DATE_FORMAT(o.order_date, '%M %Y') AS month_name,
