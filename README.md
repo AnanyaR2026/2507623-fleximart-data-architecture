@@ -30,7 +30,7 @@
 
 ## Technologies Used
 
-- Python 3.x, pandas, mysql-connector-python
+- Google Colab, pandas, mysql-connector-python
 - MySQL 8.0 / PostgreSQL 14
 - MongoDB 6.0
 
